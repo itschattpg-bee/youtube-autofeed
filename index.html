@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AutoFeed</title><link rel="stylesheet" href="style.css">
+</head><body>
+<div class="app">
+<header class="top"><div><div class="logo">▶ AutoFeed</div><div class="tiny" id="count">0 channels</div></div><button class="icon" id="refresh">↻</button></header>
+<main>
+<section id="home" class="page active">
+  <div class="search"><span>⌕</span><input id="search" placeholder="Search videos"></div>
+  <div class="chips" id="chips"></div>
+  <div class="section"><h1>Latest videos</h1><span class="muted">Last 30 days</span></div>
+  <div id="feed" class="feed"></div><div id="empty" class="empty">Add channels to start your feed.</div>
+</section>
+<section id="channels" class="page">
+  <div class="page-head"><h1>Channels</h1><p>Add as many YouTube channels as you want.</p></div>
+  <div class="addbox"><textarea id="urls" placeholder="Paste YouTube channel URLs or @handles&#10;One per line&#10;&#10;https://youtube.com/@channel1&#10;https://youtube.com/@channel2"></textarea><button id="add">＋ Add channels</button></div>
+  <div id="channelList"></div>
+</section>
+<section id="settings" class="page">
+  <div class="page-head"><h1>Settings</h1><p>Your saved feed settings.</p></div>
+  <div class="setting"><div><b>Auto refresh</b><p>Refresh the feed when the app opens.</p></div><label class="switch"><input id="auto" type="checkbox" checked><i></i></label></div>
+  <div class="setting danger"><div><b>Clear all channels</b><p>Remove every saved channel.</p></div><button id="clear">Clear</button></div>
+</section>
+</main>
+<nav class="bottom">
+<button data-page="home" class="nav active"><span>⌂</span>Home</button>
+<button data-page="channels" class="nav"><span>＋</span>Channels</button>
+<button data-page="settings" class="nav"><span>⚙</span>Settings</button>
+</nav>
+<div class="player" id="player"><button id="close">×</button><iframe id="frame" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe><div class="playerTitle" id="pt"></div></div>
+<div class="toast" id="toast"></div>
+</div><script src="script.js"></script></body></html>
